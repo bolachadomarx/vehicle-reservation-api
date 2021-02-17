@@ -3,15 +3,15 @@ const mongoose = require('../database')
 const VehicleSchema = new mongoose.Schema({
   model: {
     type: String,
-    require: true
+    required: true
   },
   year: {
     type: String,
-    require: true
+    required: true
   },
   brand: {
     type: String,
-    require: true
+    required: true
   },
   rentedBy: {
     type: mongoose.Schema.Types.ObjectId,

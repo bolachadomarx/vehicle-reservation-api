@@ -9,6 +9,8 @@ app.use(express.json())
 
 
 require('./controllers/auth-controller')(app)
+require('./controllers/vehicle-controller')(app)
+
 
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')
