@@ -1,0 +1,9 @@
+version: '3'
+services:
+  reservation-api:
+    container_name: reservation-api
+    build: .
+    image: happmobi-reservation-api
+    restart: always
+    ports:
+      - '3000:3000'

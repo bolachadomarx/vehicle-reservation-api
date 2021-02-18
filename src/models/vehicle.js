@@ -28,6 +28,9 @@ const VehicleSchema = new mongoose.Schema({
   kilometers: {
     type: Number,
     required: true
+  },
+  rentDate: {
+    type: Date
   }
 })
 
