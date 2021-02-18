@@ -1,17 +1,21 @@
 const express = require('express')
 const dotenv = require('dotenv')
-
+const cors = require('cors')
+const bodyParser = require('body-parser')
 const app = express()
 
 dotenv.config()
 
-app.use(express.json())
+app.use(cors())
+app.use(bodyParser.json({ limit: '50mb' }))
+
 
 
 require('./controllers/auth-controller')(app)
 require('./controllers/vehicle-controller')(app)
 
-
-app.listen(3000, () => {
-  console.log('Server is running on http://localhost:3000')
+app.use('/', (req, res) => {
+  res.json({ message: 'API running' })
 })
+
+module.exports = app

@@ -16,6 +16,18 @@ const VehicleSchema = new mongoose.Schema({
   rentedBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
+  },
+  image: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  kilometers: {
+    type: Number,
+    required: true
   }
 })
 

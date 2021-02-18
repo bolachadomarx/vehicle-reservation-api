@@ -18,15 +18,14 @@ router.get('/', async (req, res) => {
 })
 
 router.put('/:id', async (req, res) => {
-  await VehicleModel.updateOne({ _id: req.params.id }, req.body)
-  const vehicle = await VehicleModel.findOne(req.id)
+  await VehicleModel.updateOne({ _id: req.params.id }, req.body).exec()
+  const vehicle = await VehicleModel.findOne({ _id: req.params.id })
   return res.send(vehicle)
 })
 
 router.delete('/:id', async (req, res) => {
   await VehicleModel.deleteOne({ _id: req.params.id })
-  const vehicle = await VehicleModel.findOne(req.id)
-  return res.send(vehicle)
+  return res.send('Deleted')
 })
 
 module.exports = app => app.use('/vehicle', router) 
